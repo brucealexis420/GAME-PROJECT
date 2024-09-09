@@ -1,15 +1,17 @@
 html, body {
-    height: 100%;        /* Asegura que el HTML y el body ocupen todo el alto de la ventana */
+    height: 100vh;        /* Asegura que el HTML y el body ocupen todo el alto de la ventana */
     margin: 0;          /* Elimina márgenes por defecto */
-    display: flex;      /* Usa flexbox para centrar el contenido */
-    justify-content: center;  /* Centra horizontalmente */
-    align-items: center;      /* Centra verticalmente */
-    background: #87CEEB;  
-    place-items: center;   /* Fondo opcional (color cielo claro) */
+    padding: 0;         /* Elimina relleno por defecto */
+    box-sizing: border-box;  /* Asegura que el contenedor no ocupe el espacio de los bordes */
+    
 }
 
-.game-container {
-    width: 800px;       /* Ancho del contenedor del juego */
-    height: 600px;      /* Alto del contenedor del juego */
-    position: relative; /* Asegura que el contenedor esté en la posición correcta */
+#game-container {
+    width: 280; /* Ocupa el ancho completo de la ventana */
+    height: 280; /* Ocupa el alto completo de la ventana */
+    overflow: hidden; /* Evita barras de desplazamiento */
+    position: absolute; /* Posiciona el contenedor en relación a la ventana */
+    top: 0;
+    left: 0;
+    
 }

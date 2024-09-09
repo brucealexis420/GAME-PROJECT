@@ -5,24 +5,34 @@ import { GameScene } from './scenes/GameScene.js';
 function startGame() {
     // Configuración del juego utilizando Phaser
     const config = {
-        type: Phaser.AUTO, // Utiliza el renderizador automáticamente (WebGL o Canvas)
-        width: 800, // Ancho del juego en píxeles
-        height: 600, // Alto del juego en píxeles
-        parent: 'game-container', // ID del contenedor HTML donde se renderizará el juego
-        scene: [GameScene], // Lista de escenas que se cargarán, en este caso solo GameScene
+        type: Phaser.AUTO,
+        width: window.innerWidth,
+        height: window.innerHeight,
+        parent: 'game-container',
+        scene: [GameScene],
         physics: {
-            default: 'arcade', // Tipo de físicas a usar (Arcade Physics)
+            default: 'arcade',
             arcade: {
-                gravity: { y: 300 }, // Gravedad aplicada en el eje Y
-                debug: false // Desactiva el modo de depuración de físicas
+                gravity: { y: 300 },
+                debug: false
             }
+        },
+        scale: {
+            mode: Phaser.Scale.FIT,
+            autoCenter: Phaser.Scale.CENTER_BOTH
+        },
+        input: {
+            activePointers: 3,
         }
     };
 
     // Crea una nueva instancia del juego con la configuración proporcionada
     const game = new Phaser.Game(config);
 
-    // Oculta el botón de inicio después de iniciar el juego
+    window.addEventListener('resize', () => {
+        game.scale.resize(window.innerWidth, window.innerHeight);
+    });
+
     const startButton = document.getElementById('start-button');
     startButton.style.display = 'none';
 }
