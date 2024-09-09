@@ -14,6 +14,7 @@ function startGame() {
             default: 'arcade',
             arcade: {
                 gravity: { y: 300 },
+                
                 debug: false
             }
         },

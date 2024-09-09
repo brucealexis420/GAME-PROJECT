@@ -37,6 +37,8 @@ export class Player {
             frameRate: 10, // Velocidad de la animación
             repeat: -1 // Repite la animación indefinidamente
         });
+
+        
     }
 
     // Método para manejar el movimiento del jugador basado en las teclas de cursor
