@@ -29,11 +29,7 @@ function startGame() {
 
     // Crea una nueva instancia del juego con la configuración proporcionada
     const game = new Phaser.Game(config);
-
-    window.addEventListener('resize', () => {
-        game.scale.resize(window.innerWidth, window.innerHeight);
-    });
-
+    
     const startButton = document.getElementById('start-button');
     startButton.style.display = 'none';
 }
