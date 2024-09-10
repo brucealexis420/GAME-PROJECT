@@ -1,18 +1,58 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.container{
+
+.container {
     height: 100vh;
-    
     display: flex;
+    flex-direction: column; /* Cambia la dirección del eje principal a columna */
     justify-content: center;
     align-items: center;
     background-color: #333;
     overflow: hidden;
     box-sizing: border-box;
-
+    background-color: #fff;
 }
 
+#start-button {
+    width: 70px; /* Ajusta el ancho del botón */
+    height: 60px; /* Ajusta la altura del botón */
+    padding: 0; /* Elimina el padding para que sea un círculo perfecto */
+    font-size: 20px;
+    background-color: #25b933;
+    border: solid ;
+    border-radius: 50%; /* Hace que el botón sea circular */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Alinea el contenido (texto) en el centro */
+}
+.infinity-jump {
+    font-size: 50px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #7fff00, #00ff00, #00ff7f, #00ffff, #007fff, #0000ff, #7f00ff, #ff00ff, #ff007f);
+    background-size: 400% 400%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 20px; /* Añade un margen inferior para separar el título del botón */
+    animation: gradientShift 5s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
