@@ -22,7 +22,7 @@ export class Platforms {
         this.group.create(400, 770, 'ground');
 
         // La cuarta plataforma se posiciona en (850, 220) sin escala adicional
-        this.group.create(450, 690, 'ground');
+        this.group.create(45 , 690, 'ground');
 
         // La quinta plataforma se posiciona en (900, 190) sin escala adicional
         this.group.create(900, 620, 'ground');

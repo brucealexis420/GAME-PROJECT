@@ -1,17 +1,17 @@
-html, body {
-    height: 100vh;        /* Asegura que el HTML y el body ocupen todo el alto de la ventana */
-    margin: 0;          /* Elimina márgenes por defecto */
-    padding: 0;         /* Elimina relleno por defecto */
-    box-sizing: border-box;  /* Asegura que el contenedor no ocupe el espacio de los bordes */
-    
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#game-container {
-    width: 280; /* Ocupa el ancho completo de la ventana */
-    height: 280; /* Ocupa el alto completo de la ventana */
-    overflow: hidden; /* Evita barras de desplazamiento */
-    position: absolute; /* Posiciona el contenedor en relación a la ventana */
-    top: 0;
-    left: 0;
-    
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    overflow: hidden;
+    box-sizing: border-box;
+
 }
+

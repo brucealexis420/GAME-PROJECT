@@ -37,29 +37,32 @@ export class GameScene extends Phaser.Scene {
         this.platforms = new Platforms(this);
         this.platforms.create();
 
+
+
         // Inicializa y crea el jugador
         this.player = new Player(this);
         this.player.create(); 
+
         // Detectar toques en la pantalla para moverse
-    this.input.on('pointerdown', (pointer) => {
-        if (pointer.x < this.scale.width / 2) {
-            this.player.sprite.setVelocityX(-160); // Izquierda
-            this.player.sprite.anims.play('left', true);
-        } else {
-            this.player.sprite.setVelocityX(160); // Derecha
-            this.player.sprite.anims.play('right', true);
-        }
-    });
+        this.input.on('pointerdown', (pointer) => {
+            if (pointer.x < this.scale.width / 2) {
+                this.player.sprite.setVelocityX(-160); // Izquierda
+                this.player.sprite.anims.play('left', true);
+            } else {
+                this.player.sprite.setVelocityX(160); // Derecha
+                this.player.sprite.anims.play('right', true);
+            }
+        });
 
-    this.input.on('pointerup', () => {
-        this.player.sprite.setVelocityX(0); // Detener movimiento
-        this.player.sprite.anims.play('turn');
-    });
+        this.input.on('pointerup', () => {
+            this.player.sprite.setVelocityX(0); // Detener movimiento
+            this.player.sprite.anims.play('turn');
+        });
 
-    // Detectar un swipe para saltar
-    this.input.on('pointerdown', (pointer) => {
-        this.startY = pointer.y;
-    });
+        // Detectar un swipe para saltar
+        this.input.on('pointerdown', (pointer) => {
+            this.startY = pointer.y;
+        });
 
     this.input.on('pointerup', (pointer) => {
         if (this.startY - pointer.y > 50 && this.player.sprite.body.touching.down) {
